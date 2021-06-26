@@ -6,6 +6,7 @@ body {
   font-family: "Roboto", sans-serif;
   background: url("./assests/Portrait.jpg") no-repeat center center fixed;
   color: aliceblue;
+  overflow-x: hidden;
 }
 
 .img {
@@ -49,7 +50,8 @@ body {
 
   margin-bottom: 20px;
   padding: 20px 0;
-  padding-bottom: 40px;
+  padding-bottom: 60px;
+  transition: 1000ms;
 }
 
 
@@ -59,11 +61,11 @@ body {
 }
 
 .name {
-  font-size: 20pt;
+  font-size: 24pt;
 }
 
 .temperature {
-  font-size: 54pt;
+  font-size: 60pt;
   width: 250px;
 }
 
@@ -82,15 +84,27 @@ body {
   color: rgba(0, 0, 0, 0.6);
 }
 
-.error {
-  font-size: 18pt;
+.error {  
   line-height: 50px;
   border-radius: 50px;
+  padding-bottom: 40px;
 }
 
 .btn-close{
   margin-right: 20px;
 }
+
+.scroll-to-top{
+  position: fixed;
+  bottom: 7%;
+  right: 30px;
+  z-index: 1000;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-image: url("./assests/icons/up.png");
+}
+
 
 
 @media screen and (max-width: 540px) {
@@ -98,5 +112,12 @@ body {
   .img{
     display: none;
   }
-  
+
+  .motto{
+    font-size: 52pt;
+  }
+  .text{
+    font-size: 20pt;
+  }
+
 }
