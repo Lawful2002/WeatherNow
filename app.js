@@ -1,3 +1,22 @@
+//design
+
+const scrollTop = document.querySelector(".scroll-to-top");
+
+document.addEventListener("scroll", ()=>{
+  if(scrollY > 500){
+    scrollTop.classList.remove("visually-hidden");
+  }
+  else{
+    scrollTop.classList.add("visually-hidden");
+  }
+})
+
+scrollTop.addEventListener("click", ()=>{
+  window.scroll(0, 0)
+})
+
+
+
 // form submission
 const form = document.querySelector("form");
 
@@ -23,7 +42,6 @@ form.addEventListener("submit", (e) => {
 // create data
 
 const container = document.querySelector(".weather");
-
 
 function create(data) {
   //data extraction
@@ -57,14 +75,17 @@ function create(data) {
   outer.classList.add("row");
   outer.classList.add("g-2");
   outer.classList.add("outer");
-  outer.setAttribute("data-aos", "fade-down");
-  outer.setAttribute("data-aos-duration", "850");  
+  outer.setAttribute("data-aos", "zoom-in");
+  outer.setAttribute("data-aos-duration", "700");  
+  outer.setAttribute("data-aos-anchor-placement", "top-bottom"); 
 
   const closeButton = document.createElement("div");
   closeButton.classList.add("d-flex");
   closeButton.classList.add("justify-content-end");
   closeButton.classList.add("col-lg-12");
 
+
+  //close button start
   const close = document.createElement("button");
   close.classList.add("btn-close");
 
@@ -75,6 +96,13 @@ function create(data) {
   closeButton.append(close);
   outer.append(closeButton);  
 
+  //close button end
+
+  const inner1 = document.createElement("div");
+  inner1.classList.add("basic-info");
+  inner1.classList.add("row");
+  inner1.classList.add("col-xl-5")
+
   //city name
 
   const name = document.createElement("div");
@@ -82,7 +110,7 @@ function create(data) {
   name.classList.add("text-center");
   name.classList.add("name");
   name.append(`${city}, ${country}`);  
-  outer.append(name);
+  inner1.append(name);
 
   //icon and temp
 
@@ -106,7 +134,9 @@ function create(data) {
   tempIcon.append(img);
   tempIcon.append(temperature);
 
-  outer.append(tempIcon);
+  inner1.append(tempIcon);
+
+  outer.append(inner1);
 
   //description
 
@@ -115,7 +145,7 @@ function create(data) {
   des.classList.add("text-center");
   des.classList.add("des");
   des.append(description);
-  outer.append(des);
+  inner1.append(des);
 
   //feels like
   const feels = document.createElement("div");
@@ -125,9 +155,16 @@ function create(data) {
   feels.append("Feels like  ");
   feels.append(feelsLike);
   feels.append("\u00B0 C");
-  outer.append(feels);
+  inner1.append(feels);
 
   //other details
+
+
+  const inner2 = document.createElement("div");
+  inner2.classList.add("details");
+  inner2.classList.add("row");
+  inner2.classList.add("col-xl-7")
+
   const otherContainer = document.createElement("div");
   otherContainer.classList.add("row");
   otherContainer.classList.add("g-4");
@@ -166,15 +203,15 @@ function create(data) {
 
   }
 
-  outer.append(otherContainer);
+  inner2.append(otherContainer);
+  outer.append(inner2);
 
   container.prepend(outer);
 
-  ScrollToTarget(outer);
+  window.scrollTo( 0, 120 );
 }
 
 //error
-
 function outputError(){
   const ele = document.createElement("div");
   ele.classList.add("error");
@@ -210,32 +247,24 @@ function outputError(){
 }
 
 //test data
-const testData = {
-  data: {
-    name: "New Delhi",
-    sys: { country: "IN" },
-    main: {
-      feels_like: 313.97,
-      humidity: 44,
-      pressure: 1004,
-      temp: 309.24,
-      temp_max: 309.24,
-      temp_min: 309.24,
-    },
-    wind: { speed: 2.06, deg: 320 },
-    weather: [{ id: 721, main: "Haze", description: "haze", icon: "50d" }],
-    visibility: 3000,
-  },
-};
+// const testData = {
+//   data: {
+//     name: "New Delhi",
+//     sys: { country: "IN" },
+//     main: {
+//       feels_like: 313.97,
+//       humidity: 44,
+//       pressure: 1004,
+//       temp: 309.24,
+//       temp_max: 309.24,
+//       temp_min: 309.24,
+//     },
+//     wind: { speed: 2.06, deg: 320 },
+//     weather: [{ id: 721, main: "Haze", description: "haze", icon: "50d" }],
+//     visibility: 3000,
+//   },
+// };
 
 // create(testData);
-
-function ScrollToTarget(target)
-{
-     target.scrollIntoView(true, {behaviour: "smooth"});
-}
-
-
 // api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
 
-// 4dd89761137dda26370a37ca9fb0c106
