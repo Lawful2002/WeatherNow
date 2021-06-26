@@ -1,13 +1,19 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Roboto", sans-serif;
-  background: aliceblue;
+  background: url("./assests/Portrait.jpg") no-repeat center center fixed;
+  color: aliceblue;
 }
 
 .img {
-  background-image: url("./assests/Weather_Monochromatic.png");
+  background-image: url("./assests/1.svg");
   background-repeat: no-repeat;
   height: 500px;
   width: 500px;
+  margin-left: 20px;
 }
 
 .motto {
@@ -24,24 +30,22 @@ body {
   margin-top: 30px;
 }
 
-/* data */
-
 .outer {
   margin-top: 100px;
   border-radius: 50px;
-  background: #5433ff; /* fallback for old browsers */
+  background: #5433ff;
   background: -webkit-linear-gradient(
     to left,
     #a5fecb,
     #20bdff,
     #5433ff
-  ); /* Chrome 10-25, Safari 5.1-6 */
+  );
   background: linear-gradient(
     to left,
     #a5fecb,
     #20bdff,
     #5433ff
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  );
 
   margin-bottom: 20px;
   padding: 20px 0;
@@ -86,4 +90,13 @@ body {
 
 .btn-close{
   margin-right: 20px;
+}
+
+
+@media screen and (max-width: 540px) {
+
+  .img{
+    display: none;
+  }
+  
 }

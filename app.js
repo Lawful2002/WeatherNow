@@ -11,7 +11,7 @@ form.addEventListener("submit", (e) => {
     )
     .then(function (response) {
       console.log(response);
-      create(testData);
+      create(response);
     })
     .catch(function (error) {
       outputError();
@@ -169,6 +169,8 @@ function create(data) {
   outer.append(otherContainer);
 
   container.prepend(outer);
+
+  ScrollToTarget(outer);
 }
 
 //error
@@ -228,7 +230,10 @@ const testData = {
 
 // create(testData);
 
-
+function ScrollToTarget(target)
+{
+     target.scrollIntoView(true, {behaviour: "smooth"});
+}
 
 
 // api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
