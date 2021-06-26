@@ -1,24 +1,70 @@
-body{
-    font-family: 'Roboto', sans-serif;
-    background: aliceblue;
+body {
+  font-family: "Roboto", sans-serif;
+  background: aliceblue;
 }
 
-.top{
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 50px;
+.top {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 50px;
 }
 
-.img{
-    background-image: url("./assests/Weather_Monochromatic.png");
-    background-repeat: no-repeat;
-    height: 500px;   
-    width: 500px; 
+.img {
+  background-image: url("./assests/Weather_Monochromatic.png");
+  background-repeat: no-repeat;
+  height: 500px;
+  width: 500px;
 }
 
-.motto{
-    font-size: 28pt;
+.motto {
+  font-size: 28pt;
 }
 
-.btn{
-    margin-top: 30px;
+.btn {
+  margin-top: 30px;
+}
+
+/* data */
+
+.icon {
+  width: 100px;
+  height: 100px;
+}
+
+.name {
+  font-size: 24pt;
+}
+
+.outer {
+  margin-top: 100px;
+  border-radius: 50px;
+  background: #2980b9; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #ffffff,
+    #6dd5fa,
+    #2980b9
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #ffffff,
+    #6dd5fa,
+    #2980b9
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  margin-bottom: 20px;
+  padding: 20px 0;
+}
+
+.temperature {
+  font-size: 72pt;
+  width: 250px;
+}
+
+.des {
+  font-size: 20pt;
+}
+
+.des_icon{
+    height: 50px;
+    width: 50px;
 }
