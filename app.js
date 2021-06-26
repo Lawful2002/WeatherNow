@@ -61,7 +61,7 @@ const testData = {
 
 // create data
 
-const container = document.querySelector(".container");
+const container = document.querySelector(".weather");
 
 function create(data) {
   //data extraction
