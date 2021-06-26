@@ -3,11 +3,6 @@ body {
   background: aliceblue;
 }
 
-.top {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 50px;
-}
-
 .img {
   background-image: url("./assests/Weather_Monochromatic.png");
   background-repeat: no-repeat;
@@ -16,7 +11,13 @@ body {
 }
 
 .motto {
+  font-family: "Indie Flower", cursive;
+  font-size: 68pt;
+}
+
+.text {
   font-size: 28pt;
+  font-family: "Courgette", cursive;
 }
 
 .btn {
@@ -25,38 +26,40 @@ body {
 
 /* data */
 
+.outer {
+  margin-top: 100px;
+  border-radius: 50px;
+  background: #5433ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #a5fecb,
+    #20bdff,
+    #5433ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #a5fecb,
+    #20bdff,
+    #5433ff
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  margin-bottom: 20px;
+  padding: 20px 0;
+  padding-bottom: 40px;
+}
+
+
 .icon {
   width: 100px;
   height: 100px;
 }
 
 .name {
-  font-size: 24pt;
-}
-
-.outer {
-  margin-top: 100px;
-  border-radius: 50px;
-  background: #2980b9; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to left,
-    #ffffff,
-    #6dd5fa,
-    #2980b9
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to left,
-    #ffffff,
-    #6dd5fa,
-    #2980b9
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  margin-bottom: 20px;
-  padding: 20px 0;
+  font-size: 20pt;
 }
 
 .temperature {
-  font-size: 72pt;
+  font-size: 54pt;
   width: 250px;
 }
 
@@ -64,7 +67,23 @@ body {
   font-size: 20pt;
 }
 
-.des_icon{
-    height: 50px;
-    width: 50px;
+.des_icon {
+  height: 50px;
+  width: 50px;
+}
+
+.det-text {
+  font-size: 16pt;
+  width: 210px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.error {
+  font-size: 18pt;
+  line-height: 50px;
+  border-radius: 50px;
+}
+
+.btn-close{
+  margin-right: 20px;
 }
