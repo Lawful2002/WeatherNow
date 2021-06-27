@@ -51,7 +51,8 @@ body {
   margin-bottom: 20px;
   padding: 20px 0;
   padding-bottom: 60px;
-  transition: 1000ms;
+  opacity: 0;
+  transition: all 1000ms;
 }
 
 
@@ -103,6 +104,19 @@ body {
   height: 60px;
   border-radius: 50%;
   background-image: url("./assests/icons/up.png");
+}
+
+.outer.remove{
+  position: absolute;
+  left: -200%;
+  transition: all 1000;
+}
+
+.animate
+{
+  position: absolute;
+  left: -200%;
+  transition: 1s;
 }
 
 

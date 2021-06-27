@@ -31,7 +31,18 @@ form.addEventListener("submit", (e) => {
     .then(function (response) {
       console.log(response);
       create(response);
+
+      // scroll to newly created content
+
+      let wHeight = $(window).height(); // Height of view port
+      let eOffset = $('.outer:nth-of-type(1)').offset().top; // Y-offset of element
+      let eHeight = $('.outer:nth-of-type(1)').height();
+
+      $(window).scrollTop(eOffset - wHeight + eHeight + wHeight/20);
+
+
     })
+
     .catch(function (error) {
       outputError();
     });
@@ -89,8 +100,10 @@ function create(data) {
   const close = document.createElement("button");
   close.classList.add("btn-close");
 
-  close.addEventListener("click", ()=>{
-    outer.remove();
+  close.addEventListener("click", async ()=>{
+    cuteHide(outer);
+    await delay(600);
+    outer.remove();        
   })
 
   closeButton.append(close);
@@ -206,9 +219,7 @@ function create(data) {
   inner2.append(otherContainer);
   outer.append(inner2);
 
-  container.prepend(outer);
-
-  window.scrollTo( 0, 120 );
+  container.prepend(outer);  
 }
 
 //error
@@ -244,6 +255,24 @@ function outputError(){
 
   container.prepend(ele);
 
+}
+
+//delay
+function delay (n){
+  return new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+      resolve();
+    }, n)
+  })
+}
+
+//hide
+function cuteHide(el) {
+  anime({
+    targets: el,
+    translateX: -2000,    
+    duration: 100    
+  });
 }
 
 //test data
