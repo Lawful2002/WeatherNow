@@ -26,7 +26,7 @@ form.addEventListener("submit", (e) => {
 
   axios
     .get(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=4dd89761137dda26370a37ca9fb0c106`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=4dd89761137dda26370a37ca9fb0c106`
     )
     .then(function (response) {
       console.log(response);
@@ -294,7 +294,7 @@ function success(pos) {
 
   axios
     .get(
-      `http://api.openweathermap.org/data/2.5/weather?lat=${crd.latitude}&lon=${crd.longitude}&appid=4dd89761137dda26370a37ca9fb0c106`
+      `https://api.openweathermap.org/data/2.5/weather?lat=${crd.latitude}&lon=${crd.longitude}&appid=4dd89761137dda26370a37ca9fb0c106`
     )
     .then(function (response) {
       console.log(response);
