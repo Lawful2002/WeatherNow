@@ -223,7 +223,7 @@ function create(data) {
 }
 
 //error
-function outputError(){
+async function outputError(){
   const ele = document.createElement("div");
   ele.classList.add("error");
   ele.classList.add("alert");
@@ -255,6 +255,10 @@ function outputError(){
 
   container.prepend(ele);
 
+  cuteHideError(ele);
+  await delay(4100);
+  ele.remove();
+
 }
 
 //delay
@@ -272,6 +276,13 @@ function cuteHide(el) {
     targets: el,
     translateX: -2000,    
     duration: 100    
+  });
+}
+function cuteHideError(el) {
+  anime({
+    targets: el,
+    opacity: 0,    
+    duration: 1000,     
   });
 }
 
