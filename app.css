@@ -20,6 +20,7 @@ body {
 .motto {
   font-family: 'Lato', sans-serif;
   font-size: 68pt;
+  font-weight: 600;
 }
 
 .text {
@@ -29,6 +30,8 @@ body {
 
 .btn {
   margin-top: 30px;
+  border-radius: 50px;
+  padding: 10px;
 }
 
 .outer {
@@ -90,6 +93,7 @@ body {
   border-radius: 50px;
   padding-bottom: 40px;
   transition: 4000ms;
+  margin-top: 30px;
 }
 
 .btn-close{
@@ -107,6 +111,12 @@ body {
   background-image: url("./assests/icons/up.png");
 }
 
+#city{
+  height: 50px;
+  border-radius: 50px;
+  padding: 0 20px;
+}
+
 
 @media screen and (max-width: 540px) {
 
@@ -115,7 +125,8 @@ body {
   }
 
   .motto{
-    font-size: 52pt;
+    font-size: 45pt;
+    font-weight: 600;
   }
   .text{
     font-size: 20pt;
