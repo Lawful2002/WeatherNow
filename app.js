@@ -275,6 +275,42 @@ function cuteHide(el) {
   });
 }
 
+//get user location
+function success(pos) {
+  const crd = pos.coords;
+
+  
+
+  axios
+    .get(
+      `http://api.openweathermap.org/data/2.5/weather?lat=${crd.latitude}&lon=${crd.longitude}&appid=4dd89761137dda26370a37ca9fb0c106`
+    )
+    .then(function (response) {
+      console.log(response);
+      create(response);
+
+      let wHeight = $(window).height(); // Height of view port
+      let eOffset = $('.outer:nth-of-type(1)').offset().top; // Y-offset of element
+      let eHeight = $('.outer:nth-of-type(1)').height();
+
+      $(window).scrollTop(eOffset - wHeight + eHeight + wHeight/20);
+      
+    })
+
+    .catch(function (error) {
+      
+    });
+  
+  
+}
+
+function geoLoc(){
+  navigator.geolocation.getCurrentPosition(success);
+}
+
+geoLoc();
+
+
 //test data
 // const testData = {
 //   data: {
